@@ -16,8 +16,8 @@ The client ID exported to JSON format must be copy/pasted inside the following f
 Then the Youtube Uploader for Android should be used as follow
 
 Ccreate a new YoutubeUploader object by passing the current Activity (this) object to the constructor then call the upload() method on that object.
-Parameters of the upload metho are as follow :
-- a video Uri (resource Uri provided by an Intent most of the same)
+Parameters of the upload method are as follow :
+- a video Uri (resource Uri provided by an Intent most of the time)
 - a video title
 - a video description
 - a set of tags to add to the video meta-data, it is an ArrayList of Strings
@@ -39,5 +39,11 @@ Parameters of the upload metho are as follow :
                     //call back on video upload is completed, the Video object provides the video ID with the getId() method
                 }
             });
+```
 
 #ongoing development
+- test and code coverage
+- distribution through maven
+- devices compatibility
+- factorize the code and make it even more generic
+- comment the code
