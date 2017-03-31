@@ -10,8 +10,23 @@ A second step would be to make the aar package available through Maven or any ot
 
 # how to use ?
 
+It is first essential to create a client ID from the  Google API console to give access to the Youtube API.
+The client ID exported to JSON format must be copy/pasted inside the following file : res/raw/client_secret.json
+
+Then the Youtube Uploader for Android should be used as follow
+
+Ccreate a new YoutubeUploader object by passing the current Activity (this) object to the constructor then call the upload() method on that object.
+Parameters of the upload metho are as follow :
+- a video Uri (resource Uri provided by an Intent most of the same)
+- a video title
+- a video description
+- a set of tags to add to the video meta-data, it is an ArrayList of Strings
+- a visibility status (public, private, unlisted)
+- implementation of a callback interface with 2 methods onProgress and onComplete
+
 ```java
 
+            //
             new YoutubeUploader(this).upload(videoUri,"My Title","My Description",new ArrayList<String>(), "unlisted",new YoutubeUploader.UploadCallback() {
 
                 @Override
@@ -21,6 +36,8 @@ A second step would be to make the aar package available through Maven or any ot
 
                 @Override
                 public void onComplete(Video video) {
-                    //call back on video upload is completed, the Video object provides the video ID with the getId() methode
+                    //call back on video upload is completed, the Video object provides the video ID with the getId() method
                 }
             });
+
+#ongoing development
