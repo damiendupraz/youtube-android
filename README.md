@@ -41,7 +41,7 @@ Parameters of the upload method are as follow :
             });
 ```
 
-#ongoing development
+# ongoing development
 - test and code coverage
 - distribution through maven
 - devices compatibility
